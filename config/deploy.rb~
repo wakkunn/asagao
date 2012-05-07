@@ -6,7 +6,7 @@ set :deploy_to, "/var/rails/asagao"
 set :user, "rails"
 set :use_sudo, false
 
-set :local_repository, "git@github.com:wakkunn/asagao.git"
+set :local_repository, "git@asagao.oiax.jp:2222:asagao.git"
 set :repository, "/var/git/asagao.git"
 set :scm, :git
 set :deploy_via, :remote_cache

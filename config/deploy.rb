@@ -6,10 +6,10 @@ set :deploy_to, "/var/rails/asagao"
 set :user, "rails"
 set :use_sudo, false
 
-set :repository, "."
-set :scm, :none
-set :deploy_via, :copy
-set :copy_exclude, [ "doc", "log", "tmp" ]
+set :local_repository, "git@asagao.oiax.jp:2222:asagao.git"
+set :repository, "/var/git/asagao.git"
+set :scm, :git
+set :deploy_via, :remote_cache
 
 set :normalize_asset_timestamps, false
 set :keep_releases, 3

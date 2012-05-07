@@ -1,0 +1,6 @@
+<% @articles.each do |article| %>
+<h2><%= article.title %></h2>
+<p><%= truncate(article.body, length: 80) %>
+<%= link_to "もっと読む", article %></p>
+<% end %>
+<p>This is a test.</p>

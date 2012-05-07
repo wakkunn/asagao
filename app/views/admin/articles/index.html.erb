@@ -1,0 +1,29 @@
+<% @page_title = "ニュース一覧" %>
+<h1><%= @page_title %></h1>
+
+<p><%= link_to "新規作成", :new_admin_article %></p>
+
+<% if @articles.present? %>
+<table class="list">
+  <tr>
+    <th>タイトル</th>
+    <th>日時</th>
+    <th>操作</th>
+  </tr>
+  <% @articles.each do |article| %>
+  <tr>
+    <td><%= link_to article.title, [:admin, article] %></td>
+    <td><%= article.released_at.strftime("%Y/%m/%d %H:%M") %></td>
+    <td>
+      <%= link_to "編集", [:edit, :admin, article] %> |
+      <%= link_to "削除", [:admin, article], method: :delete,
+            confirm: "本当に削除しますか?" %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+<%= will_paginate @articles %>
+
+<% else %>
+<p>ニュースがありません。</p>
+<% end %>
